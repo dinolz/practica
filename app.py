@@ -12,7 +12,7 @@ logging.basicConfig(level=logging.DEBUG)
 
 @app.route("/")
 def hello_world():
-    return "<p>Hello, World!</p>"
+    return "<h5><p>Hello, World!</p></h5>"
 
 
 @app.route("/get-price/<ticker>")
@@ -21,7 +21,7 @@ def get_price(ticker):
     headers={'User-Agent': 'Mozilla/5.0'}
     response = requests.get(url,headers=headers)
     company_info = response.json()
-   
+
     if response.status_code > 400:
         app.logger.info(f"Yahoo has problem with ticker: {ticker}.")
         app.logger.info(f"Yahoo status code: {response.status_code}.")
@@ -50,5 +50,5 @@ def get_price(ticker):
         app.logger.error("Exception occurred", exc_info=True)
 
 
-if __name__ == '_main_':
+if __name__ == '__main__':
     app.run()
