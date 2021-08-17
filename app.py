@@ -1,4 +1,4 @@
-from flask import Flask, Response
+rom flask import Flask, Response
 import requests
 import json
 import logging
@@ -21,7 +21,7 @@ def get_price(ticker):
     headers={'User-Agent': 'Mozilla/5.0'}
     response = requests.get(url,headers=headers)
     company_info = response.json()
-
+   
     if response.status_code > 400:
         app.logger.info(f"Yahoo has problem with ticker: {ticker}.")
         app.logger.info(f"Yahoo status code: {response.status_code}.")
@@ -50,7 +50,5 @@ def get_price(ticker):
         app.logger.error("Exception occurred", exc_info=True)
 
 
-if __name__ == '__main__':
+if __name__ == '_main_':
     app.run()
-
-
