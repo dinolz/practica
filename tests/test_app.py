@@ -2,7 +2,7 @@ from app import practicaeli01x
 
 
 def test_get_price():
-    cocacola_price = get_price('KO').json
+    cocacola_price = practicaeli01x('KO').json
     print(cocacola_price)
 
     assert cocacola_price['price'] > 0
