@@ -1,4 +1,4 @@
-from app import get_price
+from app import practicaeli01x
 
 
 def test_get_price():
