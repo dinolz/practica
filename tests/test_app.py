@@ -1,3 +1,4 @@
+app=app.py
 from app import get_price
 
 
